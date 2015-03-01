@@ -1,9 +1,9 @@
 <?php
 namespace RideSocial\Bundle\CoreBundle\Kernel;
 
-use ReflectionClass;
+use \ReflectionClass;
 
-abstract class Kernel extends Symfony\Component\HttpKernel\Kernel
+abstract class Kernel extends \Symfony\Component\HttpKernel\Kernel
 {
     /**
      * {@inheritdoc}
@@ -21,12 +21,11 @@ abstract class Kernel extends Symfony\Component\HttpKernel\Kernel
             new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             
             new \JMS\AopBundle\JMSAopBundle(),
-            new \JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new \JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new \JMS\TranslationBundle\JMSTranslationBundle(),
 
             new \FOS\UserBundle\FOSUserBundle(),
-            
+                        
             new \Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new \Knp\Bundle\MenuBundle\KnpMenuBundle(),
             
@@ -36,11 +35,11 @@ abstract class Kernel extends Symfony\Component\HttpKernel\Kernel
             new \WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             new \WhiteOctober\BreadcrumbsBundle\WhiteOctoberBreadcrumbsBundle(),
             
+            new \Sylius\Bundle\ResourceBundle\SyliusResourceBundle(),
+            
             new \RideSocial\Bundle\UserBundle\RideSocialUserBundle(),
             new \RideSocial\Bundle\EventBundle\RideSocialEventBundle(),
-            new \RideSocial\Bundle\LocationBundle\RideSocialLocationBundle(),
-            new \RideSocial\Bundle\VehicleBundle\RideSocialFacilityBundle(),
-            new \RideSocial\Bundle\CoreBundle\RideSocialEnrollmentBundle(),
+            new \RideSocial\Bundle\VehicleBundle\RideSocialVehicleBundle(),
         );
         
         if (in_array($this->environment, array('dev', 'test'))) {

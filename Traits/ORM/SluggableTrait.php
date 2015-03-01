@@ -4,9 +4,9 @@ namespace RideSocial\Bundle\CoreBundLe\Traits\ORM;
 trait SluggableTrait
 {
     /**
-    * @Gedmo\Slug(fields={"name"})
-    * @ORM\Column(length=128, unique=true)
-    */
+     * Slug
+     * @var string
+     */
     protected $slug;
 
     /**

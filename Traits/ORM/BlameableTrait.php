@@ -4,49 +4,55 @@ namespace RideSocial\Bundle\CoreBundLe\Traits\ORM;
 trait BlameableTrait
 {
     /**
-     * @ORM\OneToMany(targetEntity="RideSocial\Bundle\UserBundle\Entity\User", mappedBy="passel")
+     * Created by
+     * @var \RideSocial\Bundle\UserBundle\Entity\User
      */
-    protected $created_by;
+    protected $createdBy;
 
     /**
-     * @inheritdoc
+     * Updated by
+     * @var \RideSocial\Bundle\UserBundle\Entity\User
+     */
+    protected $updatedBy;
+    
+    /**
+     * Get created by
+     * @return \RideSocial\Bundle\UserBundle\Entity\User
      */
     public function getCreatedBy()
     {
-        return $this->created_by;
+        return $this->createdBy;
     }
 
     /**
-     * @inheritdoc
+     * Set created by
+     * @param \RideSocial\Bundle\UserBundle\Entity\User $user
+     * @return mixed
      */
-    public function setCreatedBy(RideSocial\Bundle\UserBundle\Entity\User $user)
+    public function setCreatedBy(\RideSocial\Bundle\UserBundle\Entity\User $user)
     {
-        $this->created_by = $user;
+        $this->createdBy = $user;
 
-        return $user;
+        return $this;
     }
 
     /**
-     * Update Author
-     * @var RideSocial\Bundle\UserBundle\Entity\User
-     * @ORM\OneToMany(targetEntity="RideSocial\UserBundle\Entity\User", mappedBy="passel")
-     */
-    protected $updated_by;
-
-    /**
-     * @inheritdoc
+     * Get udpated by
+     * @return \RideSocial\Bundle\UserBundle\Entity\User
      */
     public function getUpdatedBy()
     {
-        return $this->updated_by;
+        return $this->updatedBy;
     }
 
     /**
-     * @inheritdoc
+     * Set udpated by
+     * @param \RideSocial\Bundle\UserBundle\Entity\User $user
+     * @return mixed
      */
-    public function setUpdatedBy(RideSocial\UserBundle\Entity\User $user)
+    public function setUpdatedBy(\RideSocial\Bundle\UserBundle\Entity\User $user)
     {
-        $this->updated_by = $user;
+        $this->updatedBy = $user;
 
         return $this;
     }
